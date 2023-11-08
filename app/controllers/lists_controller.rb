@@ -9,15 +9,15 @@ class ListsController < ApplicationController
    
     list.save
    
-    redirect_to '/top'
+    redirect_to list_path(list.id)
   end
 
   def index
     @lists=List.all
   end
-   private
 
   def show
+    @list = List.find(params[:id])
   end
 
   def edit
